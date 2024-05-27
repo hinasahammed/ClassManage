@@ -19,17 +19,22 @@ class CustomTextformfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return TextFormField(
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
       validator: validator,
+      style: theme.textTheme.bodyLarge!.copyWith(
+        color: theme.colorScheme.primary,
+      ),
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
         label: Text(title),
         suffixIcon: suffixIcon,
+        focusColor: theme.colorScheme.primary,
       ),
     );
   }
