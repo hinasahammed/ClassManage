@@ -38,6 +38,7 @@ dependencies:
   gap: ^3.0.1
   google_fonts: ^6.2.1
   google_nav_bar: ^5.0.6
+  firebase_core: ^2.31.1
 
 dev_dependencies:
   flutter_test:

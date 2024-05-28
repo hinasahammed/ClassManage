@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "99811044204",
+    "project_id": "classmanage-e3692",
+    "storage_bucket": "classmanage-e3692.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99811044204:android:e9dc74135741c857b9e149",
+        "android_client_info": {
+          "package_name": "com.example.class_manage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbLgUp_DED6COR03zQs07lURi3e86WuOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
