@@ -38,7 +38,14 @@ dependencies:
   gap: ^3.0.1
   google_fonts: ^6.2.1
   google_nav_bar: ^5.0.6
-  firebase_core: ^2.31.1
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.20.0
+  cloud_firestore: ^4.17.5
+  another_flushbar: ^1.12.30
+  awesome_dialog: ^3.2.1
+  bloc: ^8.1.4
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.5
 
 dev_dependencies:
   flutter_test:

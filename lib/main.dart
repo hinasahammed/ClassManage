@@ -1,4 +1,4 @@
-import 'package:class_manage/login.dart';
+import 'package:class_manage/ui/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
