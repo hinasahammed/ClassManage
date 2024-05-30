@@ -1,5 +1,5 @@
-import 'package:class_manage/all_students.dart';
-import 'package:class_manage/upload.dart';
+import 'package:class_manage/ui/allStudents/all_students_view.dart';
+import 'package:class_manage/ui/upload/upload_view.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
@@ -12,8 +12,8 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int currentIndex = 0;
   final List pages = [
-    const Upload(),
-    const AllStudents(),
+    const UploadView(),
+    const AllStudentsView(),
   ];
   @override
   Widget build(BuildContext context) {

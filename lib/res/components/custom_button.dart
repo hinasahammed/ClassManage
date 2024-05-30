@@ -1,14 +1,17 @@
+import 'package:class_manage/utils/status.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final void Function()? onPressed;
   final String title;
   final Widget? icon;
+  final Status? status;
   const CustomButton({
     super.key,
     this.onPressed,
     required this.title,
     this.icon,
+    this.status,
   });
 
   @override
@@ -20,12 +23,16 @@ class CustomButton extends StatelessWidget {
       ),
       icon: icon,
       onPressed: onPressed,
-      label: Text(
-        title,
-        style: theme.textTheme.bodyLarge!.copyWith(
-          color: theme.colorScheme.onPrimary,
-        ),
-      ),
+      label: status == Status.loading
+          ? CircularProgressIndicator(
+              color: theme.colorScheme.onPrimary,
+            )
+          : Text(
+              title,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                color: theme.colorScheme.onPrimary,
+              ),
+            ),
     );
   }
 }

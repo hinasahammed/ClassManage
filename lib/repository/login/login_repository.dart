@@ -1,32 +1,36 @@
-import 'package:class_manage/bottom_bar.dart';
+import 'package:class_manage/res/components/bottom_bar.dart';
 import 'package:class_manage/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginRepository {
-
   final auth = FirebaseAuth.instance;
 
-  Future login(String email, String password, BuildContext context) async {
+  Future login(
+    String email,
+    String password,
+    BuildContext context,
+  ) async {
     try {
       await auth
           .signInWithEmailAndPassword(
-            email: email,
-            password: password,
-          )
-          .then(
-            (value) => Utils.showSnackbarToast(
-              context,
-              'Login Successfully',
-              Icons.check_circle,
-            ),
-          )
-          .then((value) => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => const BottomBar(),
-                ),
-              ));
+        email: email,
+        password: password,
+      )
+          .then((value) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (ctx) => const BottomBar(),
+          ),
+        );
+      }).then((value) {
+        Utils.showSnackbarToast(
+          context,
+          'Login Successfully',
+          Icons.check_circle,
+        );
+      });
     } on FirebaseAuthException catch (error) {
       if (error.code == 'invalid-email') {
         if (context.mounted) {

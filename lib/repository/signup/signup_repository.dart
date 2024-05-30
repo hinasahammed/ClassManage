@@ -1,4 +1,4 @@
-import 'package:class_manage/ui/login/login.dart';
+import 'package:class_manage/ui/login/login_view.dart';
 import 'package:class_manage/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -15,13 +15,16 @@ class SignupRepository {
     try {
       await auth
           .createUserWithEmailAndPassword(email: email, password: password)
-          .then((value) => Utils.showSnackbarToast(
-                context,
-                "Account created successfully",
-                Icons.check,
-              ))
-          .then((value) => Navigator.push(
-              context, MaterialPageRoute(builder: (ctx) => const LoginView())));
+          .then((value) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (ctx) => const LoginView()));
+      }).then((value) {
+        Utils.showSnackbarToast(
+          context,
+          "Account created successfully",
+          Icons.check,
+        );
+      });
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case "invalid-email":
@@ -41,6 +44,13 @@ class SignupRepository {
         case "wrong-password":
           if (context.mounted) {
             Utils.showSnackbarToast(context, 'Wrong password', Icons.error);
+          }
+        case "email-already-in-use":
+          if (context.mounted) {
+            Utils.showSnackbarToast(
+                context,
+                'The email address is already in use by another account.',
+                Icons.error);
           }
         default:
           Utils.showSnackbarToast(
