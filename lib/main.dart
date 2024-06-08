@@ -1,6 +1,5 @@
 import 'package:class_manage/bloc/login/login_bloc.dart';
 import 'package:class_manage/bloc/register/register_bloc.dart';
-import 'package:class_manage/bloc/textField/textfield_bloc.dart';
 import 'package:class_manage/bloc/upload/upload_bloc.dart';
 import 'package:class_manage/res/components/bottom_bar.dart';
 import 'package:class_manage/ui/login/login_view.dart';
@@ -35,9 +34,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => UploadBloc(),
         ),
-        BlocProvider(
-          create: (context) => TextfieldBloc(),
-        ),
+       
       ],
       child: MaterialApp(
         title: 'Class manage',
